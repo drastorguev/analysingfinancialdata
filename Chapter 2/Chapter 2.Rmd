@@ -40,23 +40,45 @@ IBM.prc.ret[c(1:3,nrow(IBM.prc.ret)),]
 
 ```{r}
 options(digits=7)
-
+data.IBM[715:720,]
 ```
 
 ```{r}
-
+IBM.ret<-data.IBM[,5]
+IBM.ret[c(1:3,nrow(IBM.ret)),]
 ```
 
 ```{r}
-
+IBM.ret$IBM.tot.ret=Delt(IBM.ret$IBM.Adjusted)
+IBM.ret[c(1:3,nrow(IBM.ret)),]
+options(digits=3)
+IBM.ret<-IBM.ret[,2]
+IBM.ret[c(1:3,nrow(IBM.ret)),]
+options(digits=7)
 ```
 
 ```{r}
-
+IBM.ret<-data.IBM[,5]
+IBM.ret[c(1:3,nrow(IBM.ret)),]
 ```
 
 ```{r}
+IBM.ret$IBM.ret<-diff(log(IBM.ret$IBM.Adjusted))
+IBM.ret[c(1:3,nrow(IBM.ret)),]
+```
+```{r}
+options(digits=3)
+IBM.ret[c(1:3,nrow(IBM.ret)),]
+options(digits=7)
+```
 
+```{r}
+options(digits=3,scipen=100)
+tot.rets<-cbind(IBM.ret,IBM.ret)
+tot.rets[c(1:3,nrow(tot.rets)),]
+max(abs(tot.rets$IBM.tot.ret-tot.rets$IBM.log.ret),na.rm=TRUE)
+min(abs(tot.rets$IBM.tot.ret-tot.rets$IBM.log.ret),na.rm=TRUE)
+options(digits=7,scipen=0)
 ```
 
 

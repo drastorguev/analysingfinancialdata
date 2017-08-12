@@ -245,6 +245,118 @@ IBM.prc.ret[c(1:3,nrow(IBM.prc.ret)),]</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhkaWdpdHM9NylcbmRhdGEuSUJNWzcxNTo3MjAsXVxuYGBgIn0= -->
+<pre class="r"><code>options(digits=7)
+data.IBM[715:720,]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0uT3BlbiBJQk0uSGlnaCBJQk0uTG93XG4yMDEzLTExLTAxICAgMTc5LjgxICAgMTgwLjM0ICAxNzguODhcbjIwMTMtMTEtMDQgICAxNzkuOTAgICAxODAuODAgIDE3OS4zNFxuMjAxMy0xMS0wNSAgIDE3OS41NCAgIDE3OS44MCAgMTc3LjcxXG4yMDEzLTExLTA2ICAgMTc3LjkxICAgMTc5Ljc1ICAxNzcuNzhcbjIwMTMtMTEtMDcgICAxNzkuNjAgICAxODEuMzkgIDE3OS42MFxuMjAxMy0xMS0wOCAgIDE3OC44MyAgIDE4MC4wOCAgMTc3LjM1XG4gICAgICAgICAgIElCTS5DbG9zZSBJQk0uQWRqdXN0ZWRcbjIwMTMtMTEtMDEgICAgMTc5LjIzICAgICAxNTcuODU2NFxuMjAxMy0xMS0wNCAgICAxODAuMjcgICAgIDE1OC43NzI0XG4yMDEzLTExLTA1ICAgIDE3Ny44NSAgICAgMTU2LjY0MDlcbjIwMTMtMTEtMDYgICAgMTc5LjE5ICAgICAxNTguNjY4N1xuMjAxMy0xMS0wNyAgICAxODAuMDAgICAgIDE1OS4zODU5XG4yMDEzLTExLTA4ICAgIDE3OS45OSAgICAgMTU5LjM3NzFcbiAgICAgICAgICAgSUJNLlZvbHVtZVxuMjAxMy0xMS0wMSAgICAzNjQ0NTAwXG4yMDEzLTExLTA0ICAgIDM0ODMzMDBcbjIwMTMtMTEtMDUgICAgNjA5NjgwMFxuMjAxMy0xMS0wNiAgICA0NTYwNzAwXG4yMDEzLTExLTA3ICAgIDUyMTk1MDBcbjIwMTMtMTEtMDggICAgNjI3NTAwMFxuIn0= -->
+<pre><code>           IBM.Open IBM.High IBM.Low
+2013-11-01   179.81   180.34  178.88
+2013-11-04   179.90   180.80  179.34
+2013-11-05   179.54   179.80  177.71
+2013-11-06   177.91   179.75  177.78
+2013-11-07   179.60   181.39  179.60
+2013-11-08   178.83   180.08  177.35
+           IBM.Close IBM.Adjusted
+2013-11-01    179.23     157.8564
+2013-11-04    180.27     158.7724
+2013-11-05    177.85     156.6409
+2013-11-06    179.19     158.6687
+2013-11-07    180.00     159.3859
+2013-11-08    179.99     159.3771
+           IBM.Volume
+2013-11-01    3644500
+2013-11-04    3483300
+2013-11-05    6096800
+2013-11-06    4560700
+2013-11-07    5219500
+2013-11-08    6275000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSUJNLnJldDwtZGF0YS5JQk1bLDVdXG5JQk0ucmV0W2MoMTozLG5yb3coSUJNLnJldCkpLF1cbmBgYCJ9 -->
+<pre class="r"><code>IBM.ret&lt;-data.IBM[,5]
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0uQWRqdXN0ZWRcbjIwMTAtMTItMzEgICAgIDEyMy4yODM0XG4yMDExLTAxLTAzICAgICAxMjMuODg4M1xuMjAxMS0wMS0wNCAgICAgMTI0LjAyMjdcbjIwMTMtMTItMzEgICAgIDE2Ni4wODkwXG4ifQ== -->
+<pre><code>           IBM.Adjusted
+2010-12-31     123.2834
+2011-01-03     123.8883
+2011-01-04     124.0227
+2013-12-31     166.0890</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSUJNLnJldCRJQk0udG90LnJldD1EZWx0KElCTS5yZXQkSUJNLkFkanVzdGVkKVxuSUJNLnJldFtjKDE6Myxucm93KElCTS5yZXQpKSxdXG5gYGAifQ== -->
+<pre class="r"><code>IBM.ret$IBM.tot.ret=Delt(IBM.ret$IBM.Adjusted)
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0uQWRqdXN0ZWQgSUJNLnRvdC5yZXRcbjIwMTAtMTItMzEgICAgICAgICAgMTIzICAgICAgICAgIE5BXG4yMDExLTAxLTAzICAgICAgICAgIDEyNCAgICAgMC4wMDQ5MVxuMjAxMS0wMS0wNCAgICAgICAgICAxMjQgICAgIDAuMDAxMDlcbjIwMTMtMTItMzEgICAgICAgICAgMTY2ICAgICAwLjAwNjIyXG4ifQ== -->
+<pre><code>           IBM.Adjusted IBM.tot.ret
+2010-12-31          123          NA
+2011-01-03          124     0.00491
+2011-01-04          124     0.00109
+2013-12-31          166     0.00622</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhkaWdpdHM9MylcbklCTS5yZXQ8LUlCTS5yZXRbLDJdXG5JQk0ucmV0W2MoMTozLG5yb3coSUJNLnJldCkpLF1cbmBgYCJ9 -->
+<pre class="r"><code>options(digits=3)
+IBM.ret&lt;-IBM.ret[,2]
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0udG90LnJldFxuMjAxMC0xMi0zMSAgICAgICAgICBOQVxuMjAxMS0wMS0wMyAgICAgMC4wMDQ5MVxuMjAxMS0wMS0wNCAgICAgMC4wMDEwOVxuMjAxMy0xMi0zMSAgICAgMC4wMDYyMlxuIn0= -->
+<pre><code>           IBM.tot.ret
+2010-12-31          NA
+2011-01-03     0.00491
+2011-01-04     0.00109
+2013-12-31     0.00622</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSUJNLnJldDwtZGF0YS5JQk1bLDVdXG5JQk0ucmV0W2MoMTozLG5yb3coSUJNLnJldCkpLF1cbmBgYCJ9 -->
+<pre class="r"><code>IBM.ret&lt;-data.IBM[,5]
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0uQWRqdXN0ZWRcbjIwMTAtMTItMzEgICAgIDEyMy4yODM0XG4yMDExLTAxLTAzICAgICAxMjMuODg4M1xuMjAxMS0wMS0wNCAgICAgMTI0LjAyMjdcbjIwMTMtMTItMzEgICAgIDE2Ni4wODkwXG4ifQ== -->
+<pre><code>           IBM.Adjusted
+2010-12-31     123.2834
+2011-01-03     123.8883
+2011-01-04     124.0227
+2013-12-31     166.0890</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSUJNLnJldCRJQk0ucmV0PC1kaWZmKGxvZyhJQk0ucmV0JElCTS5BZGp1c3RlZCkpXG5JQk0ucmV0W2MoMTozLG5yb3coSUJNLnJldCkpLF1cbmBgYCJ9 -->
+<pre class="r"><code>IBM.ret$IBM.ret&lt;-diff(log(IBM.ret$IBM.Adjusted))
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0uQWRqdXN0ZWQgICAgIElCTS5yZXRcbjIwMTAtMTItMzEgICAgIDEyMy4yODM0ICAgICAgICAgIE5BXG4yMDExLTAxLTAzICAgICAxMjMuODg4MyAwLjAwNDg5NDA2NVxuMjAxMS0wMS0wNCAgICAgMTI0LjAyMjcgMC4wMDEwODQ0MzhcbjIwMTMtMTItMzEgICAgIDE2Ni4wODkwIDAuMDA2MjAzNjk0XG4ifQ== -->
+<pre><code>           IBM.Adjusted     IBM.ret
+2010-12-31     123.2834          NA
+2011-01-03     123.8883 0.004894065
+2011-01-04     124.0227 0.001084438
+2013-12-31     166.0890 0.006203694</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhkaWdpdHM9MylcbklCTS5yZXRbYygxOjMsbnJvdyhJQk0ucmV0KSksXVxuYGBgIn0= -->
+<pre class="r"><code>options(digits=3)
+IBM.ret[c(1:3,nrow(IBM.ret)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0ucmV0XG4yMDEwLTEyLTMxICAgICAgTkFcbjIwMTEtMDEtMDMgMC4wMDQ4OVxuMjAxMS0wMS0wNCAwLjAwMTA4XG4yMDEzLTEyLTMxIDAuMDA2MjBcbiJ9 -->
+<pre><code>           IBM.ret
+2010-12-31      NA
+2011-01-03 0.00489
+2011-01-04 0.00108
+2013-12-31 0.00620</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhkaWdpdHM9NylcbmBgYCJ9 -->
 <pre class="r"><code>options(digits=7)</code></pre>
 <!-- rnb-source-end -->
@@ -252,23 +364,23 @@ IBM.prc.ret[c(1:3,nrow(IBM.prc.ret)),]</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhkaWdpdHM9MyxzY2lwZW49MTAwKVxudG90LnJldHM8LWNiaW5kKElCTS5yZXQsSUJNLnJldClcbnRvdC5yZXRzW2MoMTozLG5yb3codG90LnJldHMpKSxdXG5gYGAifQ== -->
+<pre class="r"><code>options(digits=3,scipen=100)
+tot.rets&lt;-cbind(IBM.ret,IBM.ret)
+tot.rets[c(1:3,nrow(tot.rets)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBJQk0ucmV0IElCTS5yZXQuMVxuMjAxMC0xMi0zMSAgICAgIE5BICAgICAgICBOQVxuMjAxMS0wMS0wMyAwLjAwNDg5ICAgMC4wMDQ4OVxuMjAxMS0wMS0wNCAwLjAwMTA4ICAgMC4wMDEwOFxuMjAxMy0xMi0zMSAwLjAwNjIwICAgMC4wMDYyMFxuIn0= -->
+<pre><code>           IBM.ret IBM.ret.1
+2010-12-31      NA        NA
+2011-01-03 0.00489   0.00489
+2011-01-04 0.00108   0.00108
+2013-12-31 0.00620   0.00620</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQKICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQKLS0tCgpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuCmBgYHtyfQpsaWJyYXJ5KHF1YW50bW9kKQpsaWJyYXJ5KHh0cykKZGF0YS5JQk08LXJlYWQuY3N2KCJJQk0uY3N2IixoZWFkZXI9VFJVRSkKZGF0ZTwtYXMuRGF0ZShkYXRhLklCTSREYXRlLGZvcm1hdD0iJVktJW0tJWQiKQpkYXRhLklCTTwtY2JpbmQoZGF0ZSwgZGF0YS5JQk1bLC0xXSkKZGF0YS5JQk08LWRhdGEuSUJNW29yZGVyKGRhdGEuSUJNJGRhdGUpLF0KZGF0YS5JQk08LXh0cyhkYXRhLklCTVssMjo3XSxvcmRlci5ieT1kYXRhLklCTVssMV0pCm5hbWVzKGRhdGEuSUJNKTwtIHBhc3RlKGMoIklCTS5PcGVuIiwiSUJNLkhpZ2giLCJJQk0uTG93IiwgIklCTS5DbG9zZSIsIklCTS5BZGp1c3RlZCIsIklCTS5Wb2x1bWUiKSkKZGF0YS5JQk1bYygxOjMsbnJvdyhkYXRhLklCTSkpLF0KYGBgCmBgYHtyfQpJQk0ucHJjLnJldDwtZGF0YS5JQk1bLDRdCklCTS5wcmMucmV0W2MoMTozLG5yb3coSUJNLnByYy5yZXQpKSxdCmBgYApgYGB7cn0KSUJNLnByYy5yZXQkSUJNLnByYy5yZXQ8LURlbHQoSUJNLnByYy5yZXQkSUJNLkNsb3NlKQpJQk0ucHJjLnJldFtjKDE6Myxucm93KElCTS5wcmMucmV0KSksXQpgYGAKYGBge3J9Cm9wdGlvbnMoZGlnaXRzPTMpCklCTS5wcmMucmV0PC1JQk0ucHJjLnJldFstMSwyXQpJQk0ucHJjLnJldFtjKDE6Myxucm93KElCTS5wcmMucmV0KSksXQpgYGAKCmBgYHtyfQpvcHRpb25zKGRpZ2l0cz03KQoKYGBgCgpgYGB7cn0KCmBgYAoKYGBge3J9CgpgYGAKCmBgYHtyfQoKYGBgCgpgYGB7cn0KCmBgYAoKCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQKICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQKLS0tCgpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuCmBgYHtyfQpsaWJyYXJ5KHF1YW50bW9kKQpsaWJyYXJ5KHh0cykKZGF0YS5JQk08LXJlYWQuY3N2KCJJQk0uY3N2IixoZWFkZXI9VFJVRSkKZGF0ZTwtYXMuRGF0ZShkYXRhLklCTSREYXRlLGZvcm1hdD0iJVktJW0tJWQiKQpkYXRhLklCTTwtY2JpbmQoZGF0ZSwgZGF0YS5JQk1bLC0xXSkKZGF0YS5JQk08LWRhdGEuSUJNW29yZGVyKGRhdGEuSUJNJGRhdGUpLF0KZGF0YS5JQk08LXh0cyhkYXRhLklCTVssMjo3XSxvcmRlci5ieT1kYXRhLklCTVssMV0pCm5hbWVzKGRhdGEuSUJNKTwtIHBhc3RlKGMoIklCTS5PcGVuIiwiSUJNLkhpZ2giLCJJQk0uTG93IiwgIklCTS5DbG9zZSIsIklCTS5BZGp1c3RlZCIsIklCTS5Wb2x1bWUiKSkKZGF0YS5JQk1bYygxOjMsbnJvdyhkYXRhLklCTSkpLF0KYGBgCmBgYHtyfQpJQk0ucHJjLnJldDwtZGF0YS5JQk1bLDRdCklCTS5wcmMucmV0W2MoMTozLG5yb3coSUJNLnByYy5yZXQpKSxdCmBgYApgYGB7cn0KSUJNLnByYy5yZXQkSUJNLnByYy5yZXQ8LURlbHQoSUJNLnByYy5yZXQkSUJNLkNsb3NlKQpJQk0ucHJjLnJldFtjKDE6Myxucm93KElCTS5wcmMucmV0KSksXQpgYGAKYGBge3J9Cm9wdGlvbnMoZGlnaXRzPTMpCklCTS5wcmMucmV0PC1JQk0ucHJjLnJldFstMSwyXQpJQk0ucHJjLnJldFtjKDE6Myxucm93KElCTS5wcmMucmV0KSksXQpgYGAKCmBgYHtyfQpvcHRpb25zKGRpZ2l0cz03KQpkYXRhLklCTVs3MTU6NzIwLF0KYGBgCgpgYGB7cn0KSUJNLnJldDwtZGF0YS5JQk1bLDVdCklCTS5yZXRbYygxOjMsbnJvdyhJQk0ucmV0KSksXQpgYGAKCmBgYHtyfQpJQk0ucmV0JElCTS50b3QucmV0PURlbHQoSUJNLnJldCRJQk0uQWRqdXN0ZWQpCklCTS5yZXRbYygxOjMsbnJvdyhJQk0ucmV0KSksXQpvcHRpb25zKGRpZ2l0cz0zKQpJQk0ucmV0PC1JQk0ucmV0WywyXQpJQk0ucmV0W2MoMTozLG5yb3coSUJNLnJldCkpLF0Kb3B0aW9ucyhkaWdpdHM9NykKYGBgCgpgYGB7cn0KSUJNLnJldDwtZGF0YS5JQk1bLDVdCklCTS5yZXRbYygxOjMsbnJvdyhJQk0ucmV0KSksXQpgYGAKCmBgYHtyfQpJQk0ucmV0JElCTS5yZXQ8LWRpZmYobG9nKElCTS5yZXQkSUJNLkFkanVzdGVkKSkKSUJNLnJldFtjKDE6Myxucm93KElCTS5yZXQpKSxdCmBgYApgYGB7cn0Kb3B0aW9ucyhkaWdpdHM9MykKSUJNLnJldFtjKDE6Myxucm93KElCTS5yZXQpKSxdCm9wdGlvbnMoZGlnaXRzPTcpCmBgYAoKYGBge3J9Cm9wdGlvbnMoZGlnaXRzPTMsc2NpcGVuPTEwMCkKdG90LnJldHM8LWNiaW5kKElCTS5yZXQsSUJNLnJldCkKdG90LnJldHNbYygxOjMsbnJvdyh0b3QucmV0cykpLF0KbWF4KGFicyh0b3QucmV0cyRJQk0udG90LnJldC10b3QucmV0cyRJQk0ubG9nLnJldCksbmEucm09VFJVRSkKbWluKGFicyh0b3QucmV0cyRJQk0udG90LnJldC10b3QucmV0cyRJQk0ubG9nLnJldCksbmEucm09VFJVRSkKb3B0aW9ucyhkaWdpdHM9NyxzY2lwZW49MCkKYGBgCgoKCgoK</div>
 
 
 

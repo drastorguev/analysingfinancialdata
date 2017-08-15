@@ -1,0 +1,106 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
+
+```{r}
+FF.raw<-read.fwf(file="F-F_Research_Data_Factors.txt", widths=c(6,8,8,8,8),skip=4)
+head(FF.raw)
+tail(FF.raw)
+```
+
+
+```{r}
+FF.raw<-FF.raw[-1051:-1145,]
+names(FF.raw)<-paste(c("text.date","RmxRf","SMB","HML","Rf"))
+head(FF.raw)
+tail(FF.raw)
+```
+
+```{r}
+FF.raw<-FF.raw[-1051:-1145,]
+FF.raw$RmxRf<-as.numeric(as.character(FF.raw$RmxRf))*100
+FF.raw$Rf<-as.numeric(as.character(FF.raw$Rf))/100
+FF.raw$date<-seq(as.Date("1926-07-01"),as.Date("2013-12-31"),by="months")
+library(zoo)
+FF.raw$date<-as.yearmon(FF.raw$date,"%Y-%m-%d")
+FF.raw[c(1:3,nrow(FF.raw)),]
+```
+
+
+```{r}
+
+str(FF.raw)
+```
+
+
+```{r}
+FF.raw$Rm<-FF.raw$RmxRf+FF.raw$Rf
+FF<-subset(FF.raw, FF.raw$date>="1963-12-01" & FF.raw$date<="2013-12-31")
+FF$Gross.Rm<-1+FF$Rm
+FF$Gross.Rm[1]<-1
+FF$Gross.Rf<-1+FF$Rf
+FF$Gross.Rf[1]<-1
+FF[c(1:3,nrow(FF)),]
+```
+
+
+```{r}
+FF$cum.Rm<-cumprod(FF$Gross.Rm)
+FF$cum.Rf<-cumprod(FF$Gross.Rf)
+FF[c(1:3,nrow(FF)),]
+```
+
+```{r}
+y.range<-range(FF$cum.Rm,FF$cum.Rf)
+y.range
+title1<-"Stock vs. Bond Returns"
+title2<-"1964 to 2013"
+plot(x=FF$date, FF$cum.Rm, type="l", xlab="Date", ylab="Value of $1 Investment ($)", ylim=y.range, main=paste(title1,"\n",title2))
+lines(x=FF$date,y=FF$cum.Rf,lty=2)
+legend("topleft", c("Stocks (2013 Ending Value: $124.89)", "Bonds (2013 Ending Value: $12.10)"), lty=c(1,2))
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+```

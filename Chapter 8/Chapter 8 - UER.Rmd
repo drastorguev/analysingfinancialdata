@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(xts)
+US.unempl<-read.csv("UNRATE.csv",skip=0)
+US.unempl$date<-as.Date(US.unempl$DATE,"%Y-%m-%d")
+US.unempl$UNRATE<-as.numeric(as.character(US.unempl$UNRATE))
+US.unempl<-xts(US.unempl$UNRATE,order.by=US.unempl$date)
+names(US.unempl)<-paste("UNRATE")
+US.unempl[1:3,]
+```
+```{r}
+US.unempl<-subset(US.unempl, index(US.unempl)>="1964-01-01" & index(US.unempl)<="2013-12-31")
+US.unempl[1:3,]
+```
+```{r}
+lt.avg<-mean(US.unempl$UNRATE)
+lt.avg
+```
+```{r}
+plot(x=index(US.unempl), xlab="Date (Quarters)", y=US.unempl$UNRATE, ylab="Unemployment Rate (%)", ylim=c(2,12), type="l", main="US Unemployment Rate From 1964 to 2017")
+```
+```{r}
+plot(x=index(US.unempl), xlab="Date (Quarters)", y=US.unempl$UNRATE, ylab="Unemployment Rate (%)", ylim=c(2,12), type="l", main="US Unemployment Rate From 1964 to 2017")
+abline(h=lt.avg,lty=2)
+text(as.Date("2001-01-01"),7.4,"Long-Term")
+text(as.Date("2001-01-01"),7,"Avg. = 6.13%")
+arrows(x0=as.Date("2001-01-01"), y0=6.9, x1=as.Date("2001-01-01"), y1=6.2, code=2, length=0.10)
+points(as.Date("2009-10-01"),10,pch=16)
+text(as.Date("2010-01-01"),11,"October 2009")
+arrows(x0=as.Date("2009-10-01"), y0=10.8, x1=as.Date("2009-10-01"), y1=10.1, code=2, length=0.10)
+```
+```{r}
+
+
+```
+```{r}
+
+
+```
+```{r}
+
+
+```
